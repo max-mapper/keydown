@@ -6,27 +6,32 @@ module.exports = function(keys, el) {
   if (!el) el = window
 
   var emitter = new Emitter()
-  var pressed = {}
+  emitter.pressed = {}
   
   el.addEventListener('blur', clearPressed)
   el.addEventListener('focus', clearPressed)
   
   el.addEventListener('keydown', function(ev) {
     var key = vkey[ev.keyCode]
-    pressed[key] = true
+    emitter.pressed[key] = true
     var allPressed = true
     keys.forEach(function(k) {
-      if (!pressed[k]) allPressed = false
+      if (!emitter.pressed[k]) allPressed = false
     })
-    if (allPressed) emitter.emit('pressed')
+    if (allPressed) {
+      emitter.emit('pressed', emitter.pressed)
+
+      // this seems to be necessary as keyup doesn't always fire during combos :/
+      clearPressed()
+    }
   })
 
   el.addEventListener('keyup', function(ev) {
-    delete pressed[vkey[ev.keyCode]]
+    delete emitter.pressed[vkey[ev.keyCode]]
   })
   
   function clearPressed() {
-    pressed = {}
+    emitter.pressed = {}
   }
   
   return emitter
