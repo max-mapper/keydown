@@ -1,6 +1,6 @@
 {
   "name": "keydown",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "client side module for firing events when keys are pressed down",
   "main": "index.js",
   "keywords": ["browserify", "keypress", "bindings", "combo", "keyup"],

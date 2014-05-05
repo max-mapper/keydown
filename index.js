@@ -14,7 +14,6 @@ module.exports = function(keys, el) {
   el.addEventListener('keydown', function(ev) {
     var key = vkey[ev.keyCode]
     pressed[key] = true
-    console.log([key, pressed, keys])
     var allPressed = true
     keys.forEach(function(k) {
       if (!pressed[k]) allPressed = false
