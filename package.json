@@ -1,0 +1,23 @@
+{
+  "name": "keydown",
+  "version": "0.0.1",
+  "description": "client side module for firing events when keys are pressed down",
+  "main": "index.js",
+  "keywords": ["browserify", "keypress", "bindings", "combo", "keyup"],
+  "scripts": {
+    "test": "echo \"to run demo: npm install beefy -g && beefy test.js\""
+  },
+  "author": "max ogden",
+  "license": "BSD",
+  "dependencies": {
+    "vkey": "~0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxogden/keydown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxogden/keydown/issues"
+  },
+  "homepage": "https://github.com/maxogden/keydown"
+}
