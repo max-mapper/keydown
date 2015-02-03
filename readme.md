@@ -30,9 +30,9 @@ the default behaviour on vital shortcuts can't be disabled, e.g. the shortcut fo
 keydown({
   // caution when setting to true: it stops the propagation `stopPropagation` and prevents the defaults `preventDefault` on every `keydown` event.
   preventImmediate: false,
-  // runs `preventDefault` on every `keydown` event, if set to true
+  // if `true`: runs `preventDefault` every time, a keydown rule is met. e.g. <meta> and 'S' are pressed.
   preventDefault: false,
-  // runs `stopPropagation` on every `keydown` event, if set to true
+  // if `true`: runs `stopPropagation` every time, a keydown rule is met. e.g. <meta> and 'S' are pressed.
   stopPropagation: false
 });
 ```
