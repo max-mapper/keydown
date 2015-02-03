@@ -20,10 +20,11 @@ kd.on('pressed', function(ev) {
 })
 ```
 
-these are the default global options. they can be used to stop the default behaviour on most of the keyboard shortcuts.
-the default behaviour on vital shortcuts can't be disabled, e.g. the shortcut for a new tab.
 
 ### options
+
+these are the default global options. they can be used to stop the default behaviour on most of the keyboard shortcuts.
+the default behaviour on vital shortcuts can't be disabled, e.g. the shortcut for a new tab.
 
 ```javascript
 keydown({
