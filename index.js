@@ -5,7 +5,7 @@ var preventImmediate = false
 var preventDefault = false
 var stopPropagation = false
 
-module.exports = function(keys, el) {
+module.exports = function (keys, el) {
 
   function listen(keys, el) {
 
@@ -18,7 +18,7 @@ module.exports = function(keys, el) {
     el.addEventListener('blur', clearPressed)
     el.addEventListener('focus', clearPressed)
 
-    el.addEventListener('keydown', function(ev) {
+    el.addEventListener('keydown', function (ev) {
       if (preventImmediate) {
         ev.preventDefault()
         ev.stopPropagation()
@@ -26,7 +26,7 @@ module.exports = function(keys, el) {
       var key = vkey[ev.keyCode]
       emitter.pressed[key] = true
       var allPressed = true
-      keys.forEach(function(k) {
+      keys.forEach(function (k) {
         if (emitter.pressed[k]) {
           if (preventDefault || preventImmediate) ev.preventDefault()
           if (stopPropagation || preventImmediate) ev.stopPropagation()
@@ -41,7 +41,7 @@ module.exports = function(keys, el) {
       }
     })
 
-    el.addEventListener('keyup', function(ev) {
+    el.addEventListener('keyup', function (ev) {
       delete emitter.pressed[vkey[ev.keyCode]]
     })
 
