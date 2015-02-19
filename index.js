@@ -27,14 +27,15 @@ module.exports = function(keys, el) {
       emitter.pressed[key] = true
       var allPressed = true
       keys.forEach(function(k) {
-        if (!emitter.pressed[k]) allPressed = false
+        if (emitter.pressed[k]) {
+          if (preventDefault || preventImmediate) ev.preventDefault()
+          if (stopPropagation || preventImmediate) ev.stopPropagation()
+        } else {
+          allPressed = false
+        }
       })
       if (allPressed) {
-        if (preventDefault || preventImmediate) ev.preventDefault()
-        if (stopPropagation || preventImmediate) ev.stopPropagation()
-
         emitter.emit('pressed', ev)
-
         // this seems to be necessary as keyup doesn't always fire during combos :/
         clearPressed()
       }
