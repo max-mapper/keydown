@@ -13,7 +13,7 @@ client side module for firing events when keys are pressed down. uses [vkey](htt
 ```js
 var keydown = require('keydown')
 
-var kd = keydown(['<control>', 'a'])
+var kd = keydown(['<control>', 'A'])
 
 kd.on('pressed', function() {
   // control + a are both pressed right now
